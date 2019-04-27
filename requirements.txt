@@ -1,0 +1,18 @@
+sqlalchemy
+elasticsearch
+flask
+marshmallow
+flask-cors
+pytz
+psutil
+bs4
+requests
+psycopg2 --no-binary psycopg2
+feedparser
+gunicorn
+black
+python-dotenv
+psycopg2
+selenium
+python-dateutil
+lxml
