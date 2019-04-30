@@ -6,8 +6,7 @@ from .configs import current_config
 
 
 def load_from_schema(
-    request: Request = None, schema=None, data: dict = None, context: dict = None
-) -> dict:
+    request: Request = None, schema=None, data: dict = None, context: dict = None) -> dict:
     instance_schema = schema()
     if context:
         instance_schema.context.update(context)

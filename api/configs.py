@@ -3,7 +3,7 @@ from pathlib import Path
 
 from dotenv import load_dotenv
 from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import sessionmaker, Session
 
 
 class Config:
@@ -17,6 +17,9 @@ class Config:
         )
         self.engine.connect()
         self.session_factory = sessionmaker(bind=self.engine)
+
+    def create_session(self) -> Session:
+        return self.session_factory()
 
     @classmethod
     def load_from_env(cls) -> "Config":

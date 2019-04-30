@@ -14,14 +14,15 @@ Base = declarative_base()
 
 
 class Funcionario(Base):
+
     __tablename__ = "funcionario"
 
     id = Column(Integer, primary_key=True, autoincrement=True)
     nome = Column(String, nullable=False)
     idade = Column(Integer, nullable=False)
+    cargo = Column(String, nullable=False)
     created_at = Column(DateTime, nullable=False, default=datetime.now())
     last_updated_at = Column(DateTime, nullable=True)
-    cargo = Column(String, nullable=False)
 
     def as_json(self) -> dict:
         return {

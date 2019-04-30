@@ -9,11 +9,11 @@ from ..helpers import current_language
 
 def exists_func_id(value: int) -> None:
     session = current_db_session()
-    bot = session.query(Funcionario).filter(Funcionario.id == value).first()
-    if not bot:
+    func = session.query(Funcionario).filter(Funcionario.id == value).first()
+    if not func:
         raise ValidationError(current_language()[Messages.MISSING_BOT])
     else:
-        g.bot = bot
+        g.func = func
 
 
 class SearchSchema(Schema):
@@ -25,22 +25,17 @@ class SearchSchema(Schema):
 
 class AddSchema(Schema):
 
-    name = fields.String(required=True, validate=[validate.Length(min=3, max=30)])
-    config = fields.Dict(required=True)
-    internal_config = fields.Dict(required=False, default={}, missing={})
-    # type_id = fields.Integer(required=True, validate=[exists_type_id])
-    sleep_time = fields.Integer(required=False, default=60, missing=60)
-    enabled = fields.Boolean(required=True, default=True)
+    nome = fields.String(required=True)
+    idade = fields.Integer(required=True)
+    cargo = fields.String(required=True)
 
 
 class UpdateSchema(Schema):
 
-    # bot_id = fields.Integer(required=True, validate=exists_bot_id)
-    name = fields.String(required=False, validate=[validate.Length(min=3, max=30)])
-    config = fields.Dict(required=True)
-    internal_config = fields.Dict(required=False, default={}, missing={})
-    sleep_time = fields.Integer(required=False, default=60, missing=60)
-    enabled = fields.Boolean(required=False, default=True)
+    func_id = fields.Integer(required=True, validate=exists_func_id)
+    nome = fields.String(required=True)
+    idade = fields.Integer(required=True)
+    cargo = fields.String(required=True)
 
 
 class DeleteSchema(Schema):
