@@ -16,19 +16,19 @@ O banco está hospedado no serviço AWS RDS. Decidi optar por esta infraestrutur
 
 ## Documentação das APIs
 
-@funcionarios.route("/search", methods=["GET"])  
-/v1/funcionarios/search
+`@funcionarios.route("/search", methods=["GET"])`  
+`/v1/funcionarios/search`
 
 Retorna todos os funcionários do banco de dados
 
 
-@funcionarios.route("/search/<int:func_id>", methods=["GET"])  
-/v1/funcionarios/search/(func_id) 
+`@funcionarios.route("/search/<int:func_id>", methods=["GET"])`  
+`/v1/funcionarios/search/(func_id)` 
  
 Retorna um funcionário específico passado por parametro [func_id]
 
-@funcionarios.route("/add", methods=["POST"])
-/v1/funcionarios/search/(func_id)
+`@funcionarios.route("/add", methods=["POST"])`  
+`/v1/funcionarios/search/(func_id)`
 
 Parametros do body da requisição:
 
@@ -39,8 +39,8 @@ Parametros do body da requisição:
 Adiciona um novo funcionário ao banco de dados
 
 
-@funcionarios.route("/<int:func_id>", methods=["PUT"])
-/v1/funcionarios/(func_id)
+`@funcionarios.route("/<int:func_id>", methods=["PUT"])`  
+`/v1/funcionarios/(func_id)`
 
 Parametros do body da requisição:
 
@@ -51,7 +51,7 @@ Parametros do body da requisição:
 Utilizando o método PUT, atualiza os dados de um funcionário já existente no banco de dados
 
 
-@funcionarios.route("/<int:func_id>", methods=["DELETE"])
-/v1/funcionarios/(func_id)
+`@funcionarios.route("/<int:func_id>", methods=["DELETE"])`  
+`/v1/funcionarios/(func_id)`
 
 Utilizando o método DELETE, remove um funcionário do banco de dados baseado no seu id
