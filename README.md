@@ -30,9 +30,11 @@ Retorna um funcionário específico passado por parametro [func_id]
 @funcionarios.route("/add", methods=["POST"])
 /v1/funcionarios/search/(func_id)
 
-@param nome  
-@param idade  
-@param cargo  
+Parametros do body da requisição:
+
+**@param nome**  
+**@param idade**
+**@param cargo**
 
 Adiciona um novo funcionário ao banco de dados
 
@@ -40,9 +42,11 @@ Adiciona um novo funcionário ao banco de dados
 @funcionarios.route("/<int:func_id>", methods=["PUT"])
 /v1/funcionarios/(func_id)
 
-@param nome  
-@param idade  
-@param cargo
+Parametros do body da requisição:
+
+**@param nome**  
+**@param idade**  
+**@param cargo**
 
 Utilizando o método PUT, atualiza os dados de um funcionário já existente no banco de dados
 
