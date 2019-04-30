@@ -32,8 +32,8 @@ Retorna um funcionário específico passado por parametro [func_id]
 
 Parametros do body da requisição:
 
-**@param nome**  
-**@param idade**
+**@param nome**    
+**@param idade**  
 **@param cargo**
 
 Adiciona um novo funcionário ao banco de dados
